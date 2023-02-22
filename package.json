@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^1.3.3",
+    "cheerio": "^1.0.0-rc.12",
+    "domjson": "^0.1.2",
+    "jsdom": "^21.1.0"
+  }
+}
