@@ -1,6 +1,5 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
-const jsdom = require("jsdom")
 
 
 const getCards = async (username) => {
@@ -35,8 +34,6 @@ const getCards = async (username) => {
               });
             });
         }
-
-        let cardDesc
 
         console.log(JSON.stringify(deckDetails))
 };
