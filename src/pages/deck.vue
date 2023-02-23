@@ -5,11 +5,7 @@
       
   <div class="w-full relative z-10">
 
-    <router-link
-      class=" fixed top-0 z-30 w-full mb-4 p-2 py-4 font-bold flex items-center text-blue-500 bg-white shadow-md"
-      to="/"
-      ><span v-html="backicon"></span> Back</router-link
-    >
+    <button @click="$router.go(-1)"   class=" fixed top-0 z-30 w-full mb-4 p-2 py-4 font-bold flex items-center text-blue-500 bg-white shadow-md"><span v-html="backicon"></span> Back</button>
     <div class="px-4 relative mt-20">
       <p class="font-bold text-2xl">{{ deck.name }}</p>
       <div class="flex items-start flex-col">  <p class="mr-2">{{ deck.type }}</p> <p class="text-xs">Worth: ${{value.toFixed(2)}}</p></div>

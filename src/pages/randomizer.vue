@@ -42,7 +42,7 @@
           v-for="slide in filteredDecks"
           :key="slide"
         >
-          <div
+          <div @click="$router.push({ path: '/deck', query: { deck: slide.link }});"
             class="p-4 relative h-full w-full flex items-center overflow-hidden rounded-lg"
           >
             <div
@@ -57,19 +57,6 @@
               {{ slide.name }}
             </p>
           </div>
-
-          <!--           <div>
- <div
-          class="bg2 z-0 absolute -top-2 left-[-50px] overflow-hidden w-[113%] h-[113%] m-8"
-          :style="{ background: `url(${slide?.cards[0]?.cards[0].image})` }"
-        ></div>
-          <div class="absolute overlay top-0 left-[-10px] w-full h-full bg-black opacity-30"></div>
-        <div
-          class="text-white z-10 w-full h-full p-2 relative flex items-center font-bold text-2xl"
-        >
-          <p>{{ slide.name}}</p>
-        </div>
-          </div> -->
         </slide>
       </carousel>
     </div>
