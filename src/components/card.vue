@@ -1,6 +1,6 @@
 <template>
   <div class="modal-overlay z-70 relative">
-    <div class="modal flex items-center justify-start p-8 flex-col overflow-scroll relative">
+    <div class="modal h-[80vh] flex items-center justify-start p-8 flex-col overflow-scroll relative">
         <button @click="$emit('close')" class="absolute right-4 top-2 font-bold text-blue-500">Close</button>
       <div class="w-[80%]">
         <img :src="card.image" />
