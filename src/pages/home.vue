@@ -1,5 +1,5 @@
 <template>
-  <div class="deckContainer w-full">
+  <div class="deckContainer w-full relative overflow-scroll">
     <div v-for="deck in decks" class="flex my-4 h-16">
       <div
         @click="goTo(deck.link)"

@@ -1,12 +1,21 @@
 <template>
-  <div v-if="!loading" class="mainscreen w-full z-0 fixed top-0 overflow-scroll">
+  <div class="mainscreen w-full z-0 fixed top-0 overflow-scroll overflow-x-hidden">
     <router-view class="fixed top-0" v-slot="{ Component, route }">
       <!-- Use any custom transition and  to `fade` -->
       <transition :name="route.meta.transition || 'fade'">
         <component :decks="decks" :is="Component" />
       </transition>
     </router-view>
+
   </div>
+
+    <div class="fixed top-0 w-full h-[88%] p-8 flex flex-col items-center justify-center" v-if="noData && $route.path == '/'">
+      <p class="text-2xl text-blue-500 text-center">Seems like you're new!<br> Go to <router-link
+      to="/settings"
+      class="font-bold"
+      >Settings</router-link
+    > to get started!</p>
+    </div>
   <div class="fixed bottom-0 w-full h-20 z-100">
     <menuBar></menuBar>
   </div>
@@ -20,22 +29,32 @@
     components: {
       menuBar
     },
+    watch:{
+    $route (to, from){
+       if(to.path == '/') {
+        this.getData()
+       }
+      }
+    },
     data() {
       return {
         decks: [],
-        loading: true,
+        noData: false,
       };
     },
     mounted() {
       this.getData();
     },
+    
     methods: {
       async getData() {
-        this.loading = true;
-        let res = await axios.get("/test.json");
-     /*    let res = await axios.get("https://thomaswt.dk/api/tappedout/doomberg"); */
-        this.decks = res.data.filter(x => x.cards.length);
-        this.loading = false;
+        if(localStorage.getItem("decks")) {
+           this.noData = false;
+          this.decks = JSON.parse(localStorage.getItem("decks")).filter(x => x.cards.length);
+        } else {
+          this.decks = [];
+          this.noData = true;
+        }
       },
     },
   };

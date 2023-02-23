@@ -1,15 +1,16 @@
 <template>
-  <div class="bg-white w-full h-full opacity-70 z-0 fixed"></div>
+    <div class="w-full h-full overflow-scroll relative">
+<div class="bg-white w-full h-full opacity-70 z-0 fixed"></div>
         <div v-if="deck.cards[0].cards[0].image" class="fixed w-full h-full -z-10 !bg-cover bgDeck" :style="{'background': `url(${deck.cards[0].cards[0].image})`}"></div>
       
   <div class="w-full relative z-10">
 
     <router-link
-      class="mb-4 p-2 py-4 font-bold flex items-center text-blue-500 bg-white shadow-md"
+      class=" fixed top-0 z-30 w-full mb-4 p-2 py-4 font-bold flex items-center text-blue-500 bg-white shadow-md"
       to="/"
       ><span v-html="backicon"></span> Back</router-link
     >
-    <div class="px-4 relative">
+    <div class="px-4 relative mt-20">
       <p class="font-bold text-2xl">{{ deck.name }}</p>
       <div class="flex items-start flex-col">  <p class="mr-2">{{ deck.type }}</p> <p class="text-xs">Worth: ${{value.toFixed(2)}}</p></div>
     </div>
@@ -38,6 +39,8 @@
     </div>
     <card :card="card" @close="close" v-if="show"></card>
   </div>
+    </div>
+  
 </template>
 <script>
   import card from "../components/card.vue";

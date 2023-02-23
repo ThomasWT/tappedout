@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-overlay">
+  <div class="modal-overlay z-70 relative">
     <div class="modal flex items-center justify-start p-8 flex-col overflow-scroll relative">
         <button @click="$emit('close')" class="absolute right-4 top-2 font-bold text-blue-500">Close</button>
       <div class="w-[80%]">
@@ -41,6 +41,7 @@ import axios from 'redaxios'
   bottom: 0;
   left: 0;
   right: 0;
+  z-index:1000;
   display: flex;
   justify-content: center;
   background-color: #000000da;
