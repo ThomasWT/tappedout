@@ -1,6 +1,6 @@
 {
-  "short_name": "Weather",
-  "name": "Weather: Do I need an umbrella?",
+  "short_name": "TappedIn",
+  "name": "TappedIn: Overview of your decks from tappedout.net",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
@@ -453,9 +453,9 @@
   ],
   "id": "/?source=pwa",
   "start_url": "/?source=pwa",
-  "background_color": "#3367D6",
+  "background_color": "#3b82f6",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#3367D6",
-  "description": "Weather forecast information"
+  "theme_color": "#3b82f6",
+  "description": "TappedIn: Overview of your decks from tappedout.net"
 }
