@@ -9,6 +9,7 @@ import randomizer from './pages/randomizer.vue'
 import settings from "./pages/settings.vue";
 import deck from "./pages/deck.vue";
 import "vue-final-modal/style.css";
+import './registerServiceWorker'
 const routes = [
   {
     path: "/",
